@@ -23,12 +23,13 @@ public class Application {
         ParticipationDAO pd = new ParticipationDAO(em);
         PersonDAO ped = new PersonDAO(em);
 
-        /*Location adda = new Location("Fiume Adda", "Trezzo sull'Adda");
-        ld.save(adda);
-        Location addaToAdd = ld.findById(adda.getId());
-        Evento poveroPiero = new Evento("Povero Piero", LocalDate.of(2025, 2, 16), "Portiamo un pupazzo sul fiume e gli diamo fuoco.", TipoEvento.PUBBLICO, 1000, addaToAdd);
-        ed.save(poveroPiero);*/
+        Location Contea = new Location("Contea", "terra di mezzo ");
+        ld.save(Contea);
+        Location addaToAdd = ld.findById(Contea.getId());
 
+        Evento HobbitStory = new Evento("lo hobbit", LocalDate.of(2025, 2, 16), " riusciranno ad uccidere smaug", TipoEvento.PUBBLICO, 1000, addaToAdd);
+        ed.save(HobbitStory);
+;
 
        /*Person aldo = new Person("Aldo", "Baglio", "aldo.baglio@gmail.com", LocalDate.of(1990, 2, 5),Genere.MASCHIO);
         ped.save(aldo);*/

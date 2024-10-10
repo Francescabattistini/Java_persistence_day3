@@ -3,7 +3,7 @@ package entities;
 import jakarta.persistence.*;
 
 import java.util.UUID;
-
+// la classe che passa i dati a evento e a persona
 @Entity
 @Table(name = "partecipazioni")
 public class Participation {
@@ -11,15 +11,15 @@ public class Participation {
     @GeneratedValue
     private UUID id;
 
-    @ManyToOne
+    @ManyToOne//seconda FK
     @JoinColumn(name = "persona_id")
     private Person person;
 
-    @ManyToOne
+    @ManyToOne // prima FK
     @JoinColumn(name = "evento_id")
     private Evento event;
 
-    @Column(name = "stato_conferma")
+    @Column(name = "stato_conferma")// enum
     @Enumerated(EnumType.STRING)
     private ParticipationState state;
 

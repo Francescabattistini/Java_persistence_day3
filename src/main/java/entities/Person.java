@@ -29,7 +29,7 @@ public class Person {
     @Column(name = "genere")
     @Enumerated(EnumType.STRING)
     private Genere genre;
-
+//Una persona può partecipare a molti eventi, e tutte queste partecipazioni sono tenute in una lista chiamata participations.
     @OneToMany(mappedBy = "person")
     private List<Participation> participations = new ArrayList<>();
 
